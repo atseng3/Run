@@ -7,7 +7,12 @@ var main_state = {
 
     preload: function() {
         // Everything in this function will be executed at the beginning. That’s where we usually load the game’s assets (images, sounds, etc.)
-		game.load.image('hello', 'assets/hello.png');
+		
+		// load our hero -- chegg icon
+		this.game.load.image('hero', 'assets/chegg.png');
+		
+		// load background color
+		this.game.stage.backgroundColor = '#AEC816';
     },
 
     create: function() { 
