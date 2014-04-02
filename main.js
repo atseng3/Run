@@ -1,6 +1,6 @@
 // We start by initializing Phaser
 // Parameters: width of the game, height of the game, how to render the game, the HTML div that will contain the game
-var game = new Phaser.Game(500, 600, Phaser.AUTO, 'game_div');
+var game = new Phaser.Game(500, 300, Phaser.AUTO, 'game_div');
 
 // And now we define our first and only state, I'll call it 'main'. A state is a specific scene of a game like a menu, a game over screen, etc.
 var main_state = {
@@ -17,7 +17,7 @@ var main_state = {
 
     create: function() { 
         // This function will be called after the preload function. Here we set up the game, display sprites, add labels, etc.
-		this.hello_sprite = game.add.sprite(250, 300, 'hello');
+		this.hello_sprite = game.add.sprite(250, 150, 'hero');
     },
 
     update: function() {
