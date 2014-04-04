@@ -47,6 +47,10 @@ var main_state = {
 
     update: function() {
         // This is where we will spend the most of our time. This function is called 60 times per second to update the game.
+		if (this.chicken.inWorld == false) {
+			this.restart_game();
+		}
+		
 		this.chicken.angle += 1;
 		this.chicken.body.velocity.y = 0;
 		
@@ -101,6 +105,12 @@ var main_state = {
 		}
 		score += 100;
 		this.label_score.content = score;
+	},
+	
+	restart_game: function() {
+		this.game.time.events.remove(this.timer);
+		// Start the 'main' state, which restarts the game
+		this.game.state.start('main');
 	}
 	
 	// moveUp: function() {
